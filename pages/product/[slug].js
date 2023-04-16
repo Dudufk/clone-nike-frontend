@@ -2,6 +2,7 @@ import React from "react";
 import Wrapper from "@/components/Wrapper";
 import { IoMdHeartEmpty } from "react-icons/io";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
+import RelatedProducts from "@/components/RelatedProducts";
 
 const ProductDetails = () => {
   const sizes = [
@@ -78,7 +79,7 @@ const ProductDetails = () => {
             </div>
 
             {/* PRODUCT PRICE */}
-            <div className="text-lg font-semibold">$ 150.00</div>
+            <div className="text-lg font-semibold">$ 220.00</div>
             <div className="text-md font-medium text-black/[0.5]">
               incl. of taxes
             </div>
@@ -173,6 +174,8 @@ const ProductDetails = () => {
           </div>
           {/* right column end */}
         </div>
+
+        <RelatedProducts />
       </Wrapper>
     </div>
   );
