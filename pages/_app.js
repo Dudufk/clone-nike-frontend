@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Grand Prix Store</title>
+        <title>Nike</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
