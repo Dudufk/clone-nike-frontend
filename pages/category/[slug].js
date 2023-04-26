@@ -73,7 +73,7 @@ const Category = ({ category, products, slug }) => {
           <label>Items per page</label>
           <select className="text-black px-3 py-1 ml-2" id="pageValue">
             <option value="3">3</option>
-            <option value="6">6</option>
+            <option value="6" selected>6</option>
             <option value="9">9</option>
           </select>
         </div>

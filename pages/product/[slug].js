@@ -6,14 +6,33 @@ import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
 import { getDiscountedPricePercentage } from "@/utils/helper";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "@/store/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails = ({ product, products }) => {
   const [selectedSize, setSelectedSize] = useState();
   const [showError, setShowError] = useState(false);
+  const dispatch = useDispatch();
   const p = product?.data?.[0]?.attributes;
+
+  const notify = () => {
+    toast.success("Success. Check your cart!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   return (
     <div className="w-full md:py-20">
+      <ToastContainer />
       <Wrapper>
         <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
           {/* left column start */}
@@ -25,7 +44,7 @@ const ProductDetails = ({ product, products }) => {
           {/* right column start */}
           <div className="flex-[1] py-3">
             {/* PRODUCT TITLE */}
-            <div className="text-[34px] font-semibold mb-2">{p.name}</div>
+            <div className="text-[34px] font-semibold mb-2 leading-tight">{p.name}</div>
 
             {/* PRODUCT SUBTITLE */}
             <div className="text-lg font-semibold mb-5">{p.subtitle}</div>
@@ -79,7 +98,7 @@ const ProductDetails = ({ product, products }) => {
                         if (item.enabled) {
                           setSelectedSize(item.size);
                           setShowError(false);
-                        }                        
+                        }
                       }}
                     >
                       {item.size}
@@ -110,6 +129,15 @@ const ProductDetails = ({ product, products }) => {
                     block: "center",
                     behavior: "smooth",
                   });
+                } else {
+                  dispatch(
+                    addToCart({
+                      ...product?.data?.[0],
+                      selectedSize,
+                      oneQuantityPrice: p.price,
+                    })
+                  );
+                  notify();
                 }
               }}
             >
