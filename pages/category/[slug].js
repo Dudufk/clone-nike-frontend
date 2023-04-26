@@ -5,11 +5,10 @@ import { fetchDataFromApi } from "@/utils/api";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-const maxResult = 3;
-
 const Category = ({ category, products, slug }) => {
   const [pageIndex, setPageIndex] = useState(1);
   const { query } = useRouter();
+  const [maxResult, setMaxResult] = useState(6);
 
   useEffect(() => {
     setPageIndex(1);
@@ -64,6 +63,20 @@ const Category = ({ category, products, slug }) => {
             </button>
           </div>
         )}
+        <div
+          className="text-center rounded md:pt-10 pb-10 md:pb-0"
+          value={maxResult}
+          onChange={(e) => {
+            setMaxResult(e.target.value);
+          }}
+        >
+          <label>Items per page</label>
+          <select className="text-black px-3 py-1 ml-2" id="pageValue">
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+          </select>
+        </div>
         {/* PAGINATION BUTTONS END */}
         {isLoading && (
           <div className="absolute top-0 left-0 w-full h-full bg-white/[0.5] flex flex-col gap-5 justify-center items-center">
@@ -99,7 +112,7 @@ export async function getStaticProps({ params: { slug } }) {
     `/api/categories?filters[slug][$eq]=${slug}`
   );
   const products = await fetchDataFromApi(
-    `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=1&pagination[pageSize]=${maxResult}`
+    `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=1&pagination[pageSize]=6`
   );
 
   return {
