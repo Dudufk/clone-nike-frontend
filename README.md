@@ -1,38 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Projeto de E-commerce Clone da Nike</h1>
 
-## Getting Started
+  <p>Este é um projeto de um e-commerce clone do famoso site da Nike, desenvolvido como uma demonstração prática de habilidades de programação web e uso de tecnologias modernas.</p>
 
-First, run the development server:
+  <h2>Tecnologias Utilizadas</h2>
+  <ul>
+    <li>Next.js: Uma estrutura de desenvolvimento web baseada em React.js que permite a criação de aplicativos web rápidos, escaláveis e com ótimo desempenho.</li>
+    <li>Strapi: Um CMS (Content Management System) de código aberto e flexível, utilizado como backend para gerenciar e fornecer conteúdo para o site do e-commerce.</li>
+    <li>Tailwind CSS: Um framework CSS altamente configurável e fácil de usar, utilizado para criar uma interface visual atrativa e responsiva.</li>
+    <li>Stripe: Uma plataforma de pagamentos online utilizada para a implementação do checkout de pagamentos, permitindo aos usuários realizar transações seguras e convenientes.</li>
+  </ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+  <h2>Funcionalidades</h2>
+  <ul>
+    <li>Navegação intuitiva e responsiva, proporcionando uma experiência de usuário agradável em dispositivos móveis e desktops.</li>
+    <li>Exibição de produtos em categorias, permitindo aos usuários filtrar e pesquisar itens de interesse.</li>
+    <li>Páginas de detalhes de produto, com imagens, descrição, preços e informações adicionais.</li>
+    <li>Adição de produtos ao carrinho de compras, com a possibilidade de ajustar a quantidade desejada.</li>
+    <li>Gerenciamento do carrinho de compras, incluindo remoção de itens e atualização de quantidades.</li>
+    <li>Processo de checkout seguro e simples, utilizando o Stripe para processar pagamentos com cartão de crédito.</li>
+  </ul>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  <p>O projeto foi desenvolvido a partir de um video no youtube do canal "JS Dev Hindi"</p>
